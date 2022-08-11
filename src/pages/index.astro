@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from '@astrojs/image/components';
+// Removing the key here - but does not seem unique to mapbox to get an access token: https://account.mapbox.com/auth/signup/
+const ACCESS_TOKEN = "TOKEN"
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<Image format={"webp"} width={500} height={500}
+			class="relative top-1/2 left-1/2 transform -translate-x-1/2 z-10 rounded-md"
+			src={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-122.3486,37.8169,9,0/500x500@2x?access_token=${ACCESS_TOKEN}`} />
+
+
+		<Image format={"webp"} width={500} height={500}
+			class="relative top-1/2 left-1/2 transform -translate-x-1/2 z-10 rounded-md"
+			src={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-0.4006,42.0879,5.01,0/500x500@2x?access_token=${ACCESS_TOKEN}`} />
+
+
+	</main>
+</Layout>
